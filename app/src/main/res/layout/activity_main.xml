@@ -5,93 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+
     tools:context=".MainActivity">
 
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radio_group">
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/textView">
 
         <RadioButton
             android:id="@+id/admin_button"
-            android:layout_width="109dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="100dp"
+            android:textColor="#fff"
             android:background="@drawable/round"
-            android:text="Admin" />
+            android:fontFamily="casual"
+            android:text="BaBa"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/anas_button"
-            android:background="@drawable/round"
+            android:textColor="#fff"
             android:layout_width="114dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/admin_button"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="33dp"
-            android:text="Anas" />
+            android:background="@drawable/round"
+            android:fontFamily="casual"
+            android:text="Anas"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/basma_button"
-            android:background="@drawable/round"
+            android:textColor="#fff"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/anas_button"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="31dp"
-            android:text="Basma" />
+            android:background="@drawable/round"
+            android:fontFamily="casual"
+            android:text="Basma"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/lina_button"
-            android:background="@drawable/round"
+            android:textColor="#fff"
             android:layout_width="114dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/basma_button"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="32dp"
-            android:text="Lina" />
+            android:background="@drawable/round"
+            android:fontFamily="casual"
+            android:text="Lina"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
     <EditText
         android:id="@+id/pass_box"
-        android:layout_width="180dp"
+        android:layout_width="253dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radio_group"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
         android:hint="Password" />
-
-    <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:background="@drawable/ic_sign_header"
-        >
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Family Knows Best"
-            android:textColor="#ebf2fa"
-            android:textSize="36sp" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/sign_button"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/pass_box"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/round"
-        android:text="Sign In" />
+        android:fontFamily="casual"
+        android:text="Sign In"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
+        android:alpha="1"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/family_pic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.9"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="BaBa Knows"
+        android:textColor="#808080"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>
