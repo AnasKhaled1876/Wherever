@@ -28,7 +28,7 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
     private Button anas_loc, basma_loc, lina_loc;
     private LatLng location;
     private DatabaseReference reference;
-    private double longitude, latitude;
+    private double anas_longitude, anas_latitude, basma_longitude, basma_latitude, lina_longitude, lina_latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,91 +71,86 @@ public class MapsActivity extends FragmentActivity implements View.OnClickListen
         switch (view.getId()) {
 
             case R.id.anas_location:
-                reference = FirebaseDatabase.getInstance().getReference().child("Locations").child("anas_location");
-                reference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        short i = 0;
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            if (i==0) {
-                                longitude = Double.valueOf(snapshot.getValue().toString());
-                                i++;
-                            }
-                            else {
-                                latitude = Double.valueOf(snapshot.getValue().toString());
-                                break;
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
+                getAnasLocation();
                 mMap.clear();
-                location = new LatLng(latitude, longitude);
+                location = new LatLng(anas_latitude, anas_longitude);
                 mMap.addMarker(new MarkerOptions().position(location).title("Marker in Tech store"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
                 break;
 
             case R.id.basma_location:
-                reference = FirebaseDatabase.getInstance().getReference().child("Locations").child("basma_location");
-                reference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        short i = 0;
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            if (i==0) {
-                                longitude = Double.valueOf(snapshot.getValue().toString());
-                                i++;
-                            }
-                            else {
-                                latitude = Double.valueOf(snapshot.getValue().toString());
-                                break;
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
+                getBasmaLocation();
                 mMap.clear();
-                location = new LatLng(latitude, longitude);
+                location = new LatLng(basma_latitude, basma_longitude);
                 mMap.addMarker(new MarkerOptions().position(location).title("Marker in Tech store"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
                 break;
 
             case R.id.lina_location:
-                reference = FirebaseDatabase.getInstance().getReference().child("Locations").child("lina_location");
-                reference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        short i = 0;
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            if (i==0) {
-                                longitude = Double.valueOf(snapshot.getValue().toString());
-                                i++;
-                            }
-                            else {
-                                latitude = Double.valueOf(snapshot.getValue().toString());
-                                break;
-                            }
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                    }
-                });
+                getLinaLocation();
                 mMap.clear();
-                location = new LatLng(latitude, longitude);
+                location = new LatLng(lina_latitude, lina_longitude);
                 mMap.addMarker(new MarkerOptions().position(location).title("Marker in Tech store"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
                 break;
         }
     }
+
+    private void getAnasLocation() {
+        reference = FirebaseDatabase.getInstance().getReference("anas_location");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getChildrenCount() > 0) {
+                    anas_longitude = dataSnapshot.child("anas_long").getValue(Double.class);
+                    anas_latitude = dataSnapshot.child("anas_lan").getValue(Double.class);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getBasmaLocation() {
+        reference = FirebaseDatabase.getInstance().getReference("basma_location");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getChildrenCount() > 0) {
+                    basma_longitude = dataSnapshot.child("basma_long").getValue(Double.class);
+                    basma_latitude = dataSnapshot.child("basma_lan").getValue(Double.class);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getLinaLocation() {
+        reference = FirebaseDatabase.getInstance().getReference("lina_location");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getChildrenCount() > 0) {
+                    lina_longitude = dataSnapshot.child("lina_long").getValue(Double.class);
+                    lina_latitude = dataSnapshot.child("lina_lan").getValue(Double.class);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+    }
+
 }
+
+
+
