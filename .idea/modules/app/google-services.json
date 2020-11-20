@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "596627363939",
+    "firebase_url": "https://wherever-bb90d.firebaseio.com",
+    "project_id": "wherever-bb90d",
+    "storage_bucket": "wherever-bb90d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596627363939:android:9b09baa59204100c338056",
+        "android_client_info": {
+          "package_name": "com.example.wherever"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596627363939-rqk8lch6aic54kpbnnu7mo0e21710ps0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wherever",
+            "certificate_hash": "647902e2b9bb115b03a7c875cb7e3fa9112d5888"
+          }
+        },
+        {
+          "client_id": "596627363939-2s60qk2st59jo0g71rnui6e3hgon1c72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW3BwMe-3CsP6j8PvkB1znlOSIq-owBdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596627363939-2s60qk2st59jo0g71rnui6e3hgon1c72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

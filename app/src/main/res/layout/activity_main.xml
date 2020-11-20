@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radio_group">
+
+        <RadioButton
+            android:id="@+id/admin_button"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/round"
+            android:text="Admin" />
+
+        <RadioButton
+            android:id="@+id/anas_button"
+            android:background="@drawable/round"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/admin_button"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="33dp"
+            android:text="Anas" />
+
+        <RadioButton
+            android:id="@+id/basma_button"
+            android:background="@drawable/round"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anas_button"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="31dp"
+            android:text="Basma" />
+
+        <RadioButton
+            android:id="@+id/lina_button"
+            android:background="@drawable/round"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/basma_button"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="32dp"
+            android:text="Lina" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/pass_box"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radio_group"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="48dp"
+        android:hint="Password" />
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:background="@drawable/ic_sign_header"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Family Knows Best"
+            android:textColor="#ebf2fa"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sign_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pass_box"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/round"
+        android:text="Sign In" />
+
+</RelativeLayout>
